@@ -8,4 +8,5 @@ fi
 echo '> Creating output directory'
 mkdir out
 
-gcc -Werror -Wall -Wextra src/*.c -o out/mcc
+# gcc -Werror -Wall -Wextra src/*.c -o out/mcc
+cmake -B out
