@@ -5,7 +5,13 @@ if(CMAKE_EXPORT_COMPILE_COMMANDS)
       ${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES})
 endif()
 project(mcc)
-add_executable(mcc src/main.cpp)
+add_executable(mcc
+  src/main.cpp
+  src/common/loadshader.cpp
+  src/common/loadshader.hpp
+)
+FILE(COPY include/SimpleFragmentShader.fragmentshader DESTINATION .)
+FILE(COPY include/SimpleVertexShader.vertexshader DESTINATION .)
 find_package(GLEW REQUIRED)
 find_package(glfw3 REQUIRED)
 find_package(sdl2 REQUIRED)
